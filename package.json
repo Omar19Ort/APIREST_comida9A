@@ -1,0 +1,19 @@
+{
+  "name": "apicomida",
+  "version": "1.0.0",
+  "description": "APIREST de comida IDGS9A",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "author": "Omar Vazquez Ortiz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
