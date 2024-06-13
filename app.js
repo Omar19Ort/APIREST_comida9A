@@ -1,11 +1,18 @@
-const express = require("express")
+const express = require("express");
+const morgan = require("morgan");
 const app = express()
 const port=3500
+const comidaRouter = require('./routes/comidarouter')
 
-app.get("/",(req,res)=>{
-    res.json({mensaje:
-        "Welcome a my API's"
-    })
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+app.use(morgan('dev'))
+
+app.use('/API', comidaRouter)
+
+app.use((req,res) =>{
+    res.status(404).json({message: 'Ruta no encontrada'})
 })
 
 //Connect with server
